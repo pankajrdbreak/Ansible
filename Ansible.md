@@ -22,7 +22,7 @@
  ```
 
 
-Line Folding Teq 1
+Line Folding teq 1
 ```console
 ---
 - name: User creation on the Linux based server
@@ -209,3 +209,12 @@ pkg_name2=nginx
 3. Hostlevel
 4. Grouplevel
 5. Parentgroup level
+
+###### If we dont want to expose variables in inventory file then the concept of HostVars and GroupVars comes into picture  
+
+Create group_vars dir inside that we will create websrv file for variables of websrv group 
+Note: file name should be as same as group name in inventry file
+#touch group_vars/websrv
+#cat group_vars/websrv
+pkg_name1: iptable
+pkg_name2: nginx
