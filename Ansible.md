@@ -63,3 +63,13 @@ Line folding teq 3
         uid: 6011
         group: root
  ```
+ 
+ 
+#### Syntax check command : It doesnt work for typo mistake 
+ ```console
+ # ansible-playbook test.yml --syntax-check
+ ```
+#### Dry run command
+```console
+# ansible-playbook test.yml --check
+```
