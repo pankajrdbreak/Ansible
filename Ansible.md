@@ -182,11 +182,28 @@ Method 1 : Variable block
       msg: "{{ city }} {{ village }}"
 ```
 
-Method 2 : Variable file
+###### Method 2 : Variable file
 
+1) Runtime
 We can provide variable at the runtime using -e option
 It will ovveride variabled
 It has highest precedance
 ```console
 ansible-playbook 9th-playbook.yml -e pkg_name1=iptable -e pkg_name2=nginx
 ```
+2) Host level 
+We can provide varibales in inventory file as well
+pkg_name1=iptable  pkg_name2=nginx
+
+3) Group level
+We can provide varibales in inventory file
+[websrv:vars]
+pkg_name1=iptable
+pkg_name2=nginx
+
+#### Var Precendance 
+1. Runtime var
+2. Playbook level
+3. Hostlevel
+4. Grouplevel
+
