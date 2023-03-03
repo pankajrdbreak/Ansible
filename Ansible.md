@@ -74,3 +74,33 @@ Line folding teq 3
  ansible-playbook test.yml --list-tags                --> gets tags on tasks
  ansible-playbook test.yml --step                     --> interactive action. It will ask yes/no while executing each task
 ```
+
+
+##### Debug Module
+To print content in ansible 
+```console
+---
+- name: Debug module demo
+  hosts: all
+  tasks:
+    - name: testing debug module
+      debug:
+        msg: "This is PankajVare from Mumbai/n"
+```
+###### Output
+```console
+[root@ip-172-31-39-199 angel]# ansible-playbook 3rd-plyabook.yml 
+
+PLAY [Debug module demo] *********************************************************************************************************************************************************************************************
+
+TASK [Gathering Facts] ***********************************************************************************************************************************************************************************************
+ok: [client1]
+
+TASK [testing debug module] ******************************************************************************************************************************************************************************************
+ok: [client1] => {
+    "msg": "This is PankajVare from Mumbai/n"
+}
+
+PLAY RECAP ***********************************************************************************************************************************************************************************************************
+client1                    : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+```
