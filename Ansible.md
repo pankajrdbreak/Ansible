@@ -167,4 +167,17 @@ Setup module is running to gather the info
 #### Variables
 1. Built in
 2. Magical --> connection vars(inventory connection), special inventory vars
-3.
+
+Method 1 : Varibal block
+```console
+---
+- name:
+  hosts: websrv
+  vars:
+   city: Kalyan
+   village: Manjarli
+  tasks:
+  - name: My data is {{ city }} and {{ village }}
+    debug:
+      msg: "{{ city }} {{ village }}"
+```
