@@ -168,7 +168,7 @@ Setup module is running to gather the info
 1. Built in
 2. Magical --> connection vars(inventory connection), special inventory vars
 
-Method 1 : Variable block
+###### Method 1 : Variable block
 ```console
 ---
 - name:
@@ -201,9 +201,11 @@ We can provide varibales in inventory file
 pkg_name1=iptable
 pkg_name2=nginx
 
-#### Var Precendance 
+4) Parent level
+
+###### Var Precendance 
 1. Runtime var
 2. Playbook level
 3. Hostlevel
 4. Grouplevel
-
+5. Parentgroup level
