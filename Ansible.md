@@ -168,7 +168,7 @@ Setup module is running to gather the info
 1. Built in
 2. Magical --> connection vars(inventory connection), special inventory vars
 
-Method 1 : Varibal block
+Method 1 : Variable block
 ```console
 ---
 - name:
@@ -180,4 +180,13 @@ Method 1 : Varibal block
   - name: My data is {{ city }} and {{ village }}
     debug:
       msg: "{{ city }} {{ village }}"
+```
+
+Method 2 : Variable file
+
+We can provide variable at the runtime using -e option
+It will ovveride variabled
+It has highest precedance
+```console
+ansible-playbook 9th-playbook.yml -e pkg_name1=iptable -e pkg_name2=nginx
 ```
