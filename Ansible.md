@@ -124,3 +124,8 @@ Its used to store the output of task
   debug:
     msg: "{{ output }}"
  ```
+
+
+##### Ansible_facts
+It will store all information about remote hosts as a built in variable.
+Setup module is running to gather the info
