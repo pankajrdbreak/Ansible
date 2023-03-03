@@ -104,3 +104,23 @@ ok: [client1] => {
 PLAY RECAP ***********************************************************************************************************************************************************************************************************
 client1                    : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
 ```
+
+##### Register keyword
+Its used to store the output of task 
+
+```console
+---
+- name: User creation on the Linux based server
+  hosts: websrv
+  tasks:
+    - name: angleone user creations
+      user:
+        name: angel6
+        state: present
+        uid: 6012
+        group: root
+      register: output
+- name: This is my output
+  debug:
+    msg: "{{ output }}"
+ ```
