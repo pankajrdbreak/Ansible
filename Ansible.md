@@ -140,7 +140,7 @@ Setup module is running to gather the info
         msg: "{{ ansible_hostname }}"
  ```
 
-##### Custom Facts
+##### Custom Facts : To fetch application information
 1. Create folder in remote host /etc/ansible/facts.d
 2. Create web.fact inside /etc/ansible/facts.d
 3. cat /etc/ansible/facts.d/web.fact
@@ -150,3 +150,13 @@ Setup module is running to gather the info
 4. save and close
 5. On ansible server give below command 
 6. ansible websrv -m setup -a 'filter=ansible_local'
+7. Also we can create playbook
+```console
+---
+- name: Get Web-app details from customize facts
+  hosts: websrv
+  tasks:
+    - name: This is collection of customize facts
+      debug:
+        msg: "{{ ansible_local.web.webdetails.web_port }} {{ ansible_local.web.webdetails.web_pkg }}"
+```
