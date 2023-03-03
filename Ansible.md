@@ -160,3 +160,11 @@ Setup module is running to gather the info
       debug:
         msg: "{{ ansible_local.web.webdetails.web_port }} {{ ansible_local.web.webdetails.web_pkg }}"
 ```
+
+##### When condition
+
+
+#### Variables
+1. Built in
+2. Magical --> connection vars(inventory connection), special inventory vars
+3.
