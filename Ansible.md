@@ -129,3 +129,13 @@ Its used to store the output of task
 ##### Ansible_facts
 It will store all information about remote hosts as a built in variable.
 Setup module is running to gather the info
+
+```console
+---
+- name: gather facts demo
+  hosts: websrv
+  tasks:
+    - name: displya info
+      debug:
+        msg: "{{ ansible_hostname }}"
+ ```
