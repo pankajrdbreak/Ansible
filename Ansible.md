@@ -65,11 +65,12 @@ Line folding teq 3
  ```
  
  
-#### Syntax check command : It doesnt work for typo mistake 
- ```console
- # ansible-playbook test.yml --syntax-check
- ```
-#### Dry run command
+#### Commands
 ```console
-# ansible-playbook test.yml --check
+ ansible-playbook test.yml --syntax-check             --> Work for indentation like error. It doesnt work for typo mistake
+ ansible-playbook test.yml --check                    --> dry run 
+ ansible-playbook test.yml --list-hosts               --> how many hosts available in the playbook
+ ansible-playbook test.yml --list-tags--list-tasks    --> how many tasks going to run
+ ansible-playbook test.yml --list-tags                --> gets tags on tasks
+ ansible-playbook test.yml --step                     --> interactive action. It will ask yes/no while executing each task
 ```
