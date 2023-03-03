@@ -168,7 +168,7 @@ Setup module is running to gather the info
 1. Built in
 2. Magical --> connection vars(inventory connection), special inventory vars
 
-###### Method 1 : Variable block
+##### Method 1 : Variable block
 ```console
 ---
 - name:
@@ -182,7 +182,7 @@ Setup module is running to gather the info
       msg: "{{ city }} {{ village }}"
 ```
 
-###### Method 2 : Variable file
+##### Method 2 : Variable file
 
 1) Runtime
 We can provide variable at the runtime using -e option
@@ -203,18 +203,29 @@ pkg_name2=nginx
 
 4) Parent level
 
-###### Var Precendance 
+#### Var Precendance 
 1. Runtime var
 2. Playbook level
 3. Hostlevel
 4. Grouplevel
 5. Parentgroup level
 
-###### If we dont want to expose variables in inventory file then the concept of HostVars and GroupVars comes into picture  
+* If we dont want to expose variables in inventory file then the concept of HostVars and GroupVars comes into picture  
+
+*group_vars
 
 Create group_vars dir inside that we will create websrv file for variables of websrv group 
-Note: file name should be as same as group name in inventry file
+* Note: file name should be as same as group name in inventry file
 #touch group_vars/websrv
 #cat group_vars/websrv
 pkg_name1: iptable
 pkg_name2: nginx
+
+*host_vars
+
+Create host_vars dir inside that we will create clint1 file for variables of websrv group 
+#touch host_vars/clint1
+#cat host_vars/clint1
+pkg_name1: iptable
+pkg_name2: nginx
+
