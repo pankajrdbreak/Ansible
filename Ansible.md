@@ -279,3 +279,15 @@ pkg_name2: nginx
        msg: This message will print only if condition is successful
      when: yum_output.failed == true
  ```
+
+##### Lookup Plugin
+
+
+
+
+
+
+
+
+#### Loops
+
