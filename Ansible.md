@@ -229,3 +229,53 @@ Create host_vars dir inside that we will create clint1 file for variables of web
 pkg_name1: iptable
 pkg_name2: nginx
 
+#### Conditions
+```console
+---
+- name: This is simple conditional statement
+  hosts: websrv
+  vars:
+    age: 18
+  tasks:
+    - name: This is my age tasks
+      command: touch /tmp/myage-18.txt
+      when: age == 18
+```
+
+```console
+---
+- name: This is another conditional statement
+  hosts: websrv,database
+  tasks:
+   - name: this is the task to check the hostname of the machine
+     debug:
+       msg: "This is my client-1"
+     when: ansible_hostname == "client-1"
+
+   - name: this is the task to check the hostname of the machine
+     debug:
+       msg: "This is my client-2"
+     when: ansible_hostname == "client-2"
+```
+     
+```console
+     ---
+- name: Installation of web server
+  hosts: websrv
+  tasks:
+   - name: Installation of the web package
+     yum:
+      name: nginx
+      state: present
+     register: yum_output
+     ignore_errors: true
+
+   - name: Show me the value inside the register variable
+     debug:
+        msg: "{{ yum_output }}"
+
+   - name: This tasks will work when condition is fullfilled
+     debug:
+       msg: This message will print only if condition is successful
+     when: yum_output.failed == true
+ ```
